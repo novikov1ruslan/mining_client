@@ -10,7 +10,7 @@ import java.util.*
 
 
 fun main(args: Array<String>) {
-    println("Connector Client (v3.1)")
+    println("Connector Client (v3.2)")
     val localMachine = java.net.InetAddress.getLocalHost()
     println("Hostname of local machine: ${localMachine.hostName}\n")
 
@@ -43,7 +43,7 @@ private fun startPingLoop(url: URL, pingPeriod: Long, email: String, id: String)
     while (true) {
         val message = StringBuffer(Date().toString())
         try {
-            message.append(" pinging $url ...")
+            message.append(" pinging...")
             val httpURLConnection = url.openConnection() as HttpURLConnection
             with(httpURLConnection) {
                 requestMethod = "POST"
